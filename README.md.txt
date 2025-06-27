@@ -1,101 +1,137 @@
-# Gerenciador de Livros com Django
+# 📚 Gerenciador de Livros com Django
 
-Um sistema web simples para gerenciar informações sobre livros, incluindo funcionalidades de cadastro, listagem e visualização de detalhes. Desenvolvido com Django, este projeto serve como um exemplo prático de uma aplicação web básica utilizando o framework.
+Um sistema completo de gerenciamento de livros feito com Django.  
+Permite cadastrar, listar, visualizar e fazer upload de capas de livros, com interface amigável e painel administrativo poderoso.
 
----
-
-## Funcionalidades ✨
-
-* Cadastro de Livros: Adicione novos livros ao sistema com título, autor, ano de publicação, editora e capa.
-* Listagem de Livros: Visualize todos os livros cadastrados em uma lista organizada.
-* Detalhes do Livro: Acesse uma página dedicada para ver informações mais detalhadas de cada livro.
-* Painel Administrativo Customizado: Gerencie os livros e outras informações do banco de dados através do painel de administração do Django, com personalizações na exibição da lista de livros.
+![Capa](https://via.placeholder.com/800x300?text=Gerenciador+de+Livros+Django)
 
 ---
 
-## Tecnologias Utilizadas 🚀
+## 🚀 Funcionalidades
 
-* Python 3.x
-* Django 5.x
-* SQLite3 (Banco de dados padrão do Django para desenvolvimento)
-* HTML5
-* CSS3 (Estilização básica)
+- ✅ Cadastro de livros com título, autor, ano, editora e imagem da capa  
+- ✅ Listagem pública com Bootstrap  
+- ✅ Página de detalhes do livro  
+- ✅ Upload e exibição de imagem  
+- ✅ Painel administrativo completo com filtros, busca e ordenação  
+- ✅ Sistema modular com Django (views, forms, models, admin)  
+- ✅ Personalização do Django Admin  
+- ✅ Organização com boas práticas de código
 
 ---
 
-## Como Rodar o Projeto (Passo a Passo) ⚙️
+## 🛠 Tecnologias utilizadas
 
-Siga estas instruções para configurar e executar o projeto em sua máquina local.
+| Tecnologia      | Descrição                          |
+|-----------------|------------------------------------|
+| 🐍 Python        | Linguagem de programação           |
+| 🌐 Django        | Framework web principal            |
+| 🎨 Bootstrap     | Estilo responsivo nos templates    |
+| 🖼 Pillow        | Manipulação de imagens (ImageField)|
+| 📂 HTML / CSS    | Estrutura e estilo das páginas     |
 
-### Pré-requisitos
+---
 
-Certifique-se de ter o Python 3.x e o `pip` (gerenciador de pacotes do Python) instalados.
+## 📁 Estrutura do projeto
 
-### 1. Clonar o Repositório
+```
+meuprojeto/
+├── livros/
+│   ├── migrations/
+│   ├── templates/
+│   │   └── livros/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+├── media/                 # Uploads de capas
+├── meuprojeto/
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── db.sqlite3
+└── manage.py
+```
+
+---
+
+## ⚙️ Como rodar o projeto localmente
+
+1. **Clone o repositório:**
 
 ```bash
-git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
-cd SEU_REPOSITORIO # ou cd meuprojeto se você já renomeou a pasta
+git clone https://github.com/Matheusjuniorz/gerenciador-livros-django.git
+cd gerenciador-livros-django
+```
 
-2. Criar e Ativar o Ambiente Virtual (Recomendado)
+2. **Crie e ative o ambiente virtual:**
 
+```bash
 python -m venv venv
-# No Windows:
-.\venv\Scripts\activate
-# No macOS/Linux:
-source venv/bin/activate
+venv\Scripts\activate  # no Windows
+# ou
+source venv/bin/activate  # no Linux/Mac
+```
 
-3. Instalar as Dependências
+3. **Instale as dependências:**
 
+```bash
 pip install -r requirements.txt
+```
 
-4. Configurar o Banco de Dados
+> Se não tiver o `requirements.txt`, use:
+```bash
+pip install django pillow
+```
 
-Aplique as migrações para criar as tabelas no banco de dados:
+4. **Execute as migrações e crie o banco:**
 
+```bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
-5. Criar um Superusuário (para acessar o Admin)
+5. **Crie um superusuário (admin):**
 
+```bash
 python manage.py createsuperuser
+```
 
-Siga as instruções no terminal para criar seu usuário e senha de administrador.
+6. **Rode o servidor local:**
 
-6. Iniciar o Servidor de Desenvolvimento
-
+```bash
 python manage.py runserver
+```
 
-7. Acessar a Aplicação
-Abra seu navegador e acesse:
+7. Acesse:
+- 📘 App: `http://127.0.0.1:8000/livros/`
+- 🔐 Admin: `http://127.0.0.1:8000/admin/`
 
-Painel Administrativo: http://127.0.0.1:8000/admin/ (Faça login com o superusuário criado)
+---
 
-Listagem de Livros: http://127.0.0.1:8000/livros/lista/
+## 👨‍💻 Autor
 
-Cadastro de Livros: http://127.0.0.1:8000/livros/cadastrar/
+**Matheus Junior Batista de Lara Pinho**  
+📍 Cuiabá - MT  
+📧 batistam032@gmail.com  
+🎓 Engenharia de Software - Faculdade Anhanguera
 
-ontribuição 🤝
-Contribuições são bem-vindas! Se você tiver sugestões ou quiser melhorar o projeto, sinta-se à vontade para:
+---
 
-Fazer um Fork do repositório.
+## 📄 Licença
 
-Criar uma nova branch (git checkout -b feature/minha-feature).
+Este projeto está sob a licença MIT.  
+Sinta-se à vontade para usar, modificar e compartilhar!
 
-Fazer suas alterações e commitar (git commit -m 'Adiciona nova feature X').
+---
 
-Fazer Push para a branch (git push origin feature/minha-feature).
+## 💡 Contribuição
 
-Abrir um Pull Request.
+Pull requests e sugestões são bem-vindos!  
+Vamos evoluir esse projeto juntos. 😄
 
-Licença) 📄
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
+---
 
-Contato 📧
-Se tiver alguma dúvida ou sugestão, entre em contato:
 
-Nome: Matheus
-
-Email: batistam032@gmail.gmail@com 
-
-Seu LinkedIn : https://www.linkedin.com/in/matheus-junior-z/
